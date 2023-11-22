@@ -20,6 +20,9 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-elasticsearch:2.5.15")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 
+	// swagger 3
+	implementation("io.springfox:springfox-boot-starter:3.0.0")
+
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")

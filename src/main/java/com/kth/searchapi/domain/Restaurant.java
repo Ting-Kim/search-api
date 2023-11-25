@@ -23,4 +23,10 @@ public class Restaurant {
 
   private String description;
 
+  public static Restaurant create(
+      String name, String category1, String category2, String category3, String city, String area,
+      String description
+  ) {
+    return new Restaurant(null, name, category1, category2, category3, city, area, description);
+  }
 }

@@ -21,4 +21,11 @@ public class RestaurantEsRepository implements RestaurantRepository {
                                        .map(RestaurantConverter::fromJpaEntity)
                                        .collect(Collectors.toList());
   }
+
+  @Override
+  public void saveAll(List<Restaurant> restaurants) {
+    restaurantEsEntityRepository.saveAll(restaurants.stream()
+                                                    .map(RestaurantConverter::toEsEntity)
+                                                    .collect(Collectors.toList()));
+  }
 }

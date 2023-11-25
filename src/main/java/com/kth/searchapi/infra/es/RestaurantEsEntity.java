@@ -1,5 +1,7 @@
 package com.kth.searchapi.infra.es;
 
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
@@ -10,6 +12,7 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 @Document(indexName = "i_restaurant", createIndex = false)
 @TypeAlias("restaurant")
 @Getter
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class RestaurantEsEntity {
 
   @Id
@@ -36,4 +39,11 @@ public class RestaurantEsEntity {
   @Field(name = "description", type = FieldType.Text)
   private String description;
 
+  public static RestaurantEsEntity of(
+      String id, String name, String category1, String category2, String category3, String city,
+      String area, String description
+  ) {
+    return new RestaurantEsEntity(id, name, category1, category2, category3, city, area,
+                                  description);
+  }
 }

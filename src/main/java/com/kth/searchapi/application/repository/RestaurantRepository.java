@@ -6,4 +6,6 @@ import java.util.List;
 public interface RestaurantRepository {
 
   List<Restaurant> findByName(String name);
+
+  void saveAll(List<Restaurant> restaurants);
 }

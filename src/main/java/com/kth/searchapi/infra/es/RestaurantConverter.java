@@ -4,14 +4,25 @@ import com.kth.searchapi.domain.Restaurant;
 
 public class RestaurantConverter {
 
-  public static Restaurant fromJpaEntity(RestaurantEsEntity restaurantJpaEntity) {
-    return Restaurant.of(restaurantJpaEntity.getId(),
-                         restaurantJpaEntity.getName(),
-                         restaurantJpaEntity.getCategory1(),
-                         restaurantJpaEntity.getCategory2(),
-                         restaurantJpaEntity.getCategory3(),
-                         restaurantJpaEntity.getCity(),
-                         restaurantJpaEntity.getArea(),
-                         restaurantJpaEntity.getDescription());
+  public static Restaurant fromJpaEntity(RestaurantEsEntity restaurantEsEntity) {
+    return Restaurant.of(restaurantEsEntity.getId(),
+                         restaurantEsEntity.getName(),
+                         restaurantEsEntity.getCategory1(),
+                         restaurantEsEntity.getCategory2(),
+                         restaurantEsEntity.getCategory3(),
+                         restaurantEsEntity.getCity(),
+                         restaurantEsEntity.getArea(),
+                         restaurantEsEntity.getDescription());
+  }
+
+  public static RestaurantEsEntity toEsEntity(Restaurant restaurant) {
+    return RestaurantEsEntity.of(restaurant.getId(),
+                                 restaurant.getName(),
+                                 restaurant.getCategory1(),
+                                 restaurant.getCategory2(),
+                                 restaurant.getCategory3(),
+                                 restaurant.getCity(),
+                                 restaurant.getArea(),
+                                 restaurant.getDescription());
   }
 }

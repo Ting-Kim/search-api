@@ -23,6 +23,9 @@ dependencies {
 	// swagger 3
 	implementation("io.springfox:springfox-boot-starter:3.0.0")
 
+	// https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml
+	implementation("org.apache.poi:poi-ooxml:3.9")
+
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")

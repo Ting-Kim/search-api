@@ -15,8 +15,8 @@ public class RestaurantEsRepository implements RestaurantRepository {
   private final RestaurantEsEntityRepository restaurantEsEntityRepository;
 
   @Override
-  public List<Restaurant> findByName(String name) {
-    return restaurantEsEntityRepository.findByName(name)
+  public List<Restaurant> findByNameOrDescription(String keyword) {
+    return restaurantEsEntityRepository.findByNameOrDescription(keyword)
                                        .stream()
                                        .map(RestaurantConverter::fromJpaEntity)
                                        .collect(Collectors.toList());

@@ -18,7 +18,7 @@ public class RestaurantEsEntity {
   @Id
   private String id;
 
-  @Field(name = "name", type = FieldType.Text)
+  @Field(name = "name", type = FieldType.Text, analyzer = "ngram_analyzer")
   private String name;
 
   @Field(name = "category1", type = FieldType.Keyword)
@@ -36,7 +36,7 @@ public class RestaurantEsEntity {
   @Field(name = "area", type = FieldType.Keyword)
   private String area;
 
-  @Field(name = "description", type = FieldType.Text)
+  @Field(name = "description", type = FieldType.Text, analyzer = "ngram_analyzer")
   private String description;
 
   public static RestaurantEsEntity of(

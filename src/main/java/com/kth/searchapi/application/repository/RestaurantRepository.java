@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface RestaurantRepository {
 
-  List<Restaurant> findByName(String name);
+  List<Restaurant> findByNameOrDescription(String keyword);
 
   void saveAll(List<Restaurant> restaurants);
 }

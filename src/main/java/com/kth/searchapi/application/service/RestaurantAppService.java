@@ -13,7 +13,7 @@ public class RestaurantAppService {
 
   private final RestaurantRepository restaurantRepository;
 
-  public RestaurantsSearchRs searchByName(String name) {
-    return RestaurantsSearchRs.from(restaurantRepository.findByName(name));
+  public RestaurantsSearchRs searchByNameOrDescription(String keyword) {
+    return RestaurantsSearchRs.from(restaurantRepository.findByNameOrDescription(keyword));
   }
 }

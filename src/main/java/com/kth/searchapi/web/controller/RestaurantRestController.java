@@ -21,4 +21,12 @@ public class RestaurantRestController {
   public HttpResponseMessage searchByNameOrDescription(@RequestParam("keyword") String keyword) {
     return HttpResponseMessage.from(restaurantAppService.searchByNameOrDescription(keyword));
   }
+
+  @ApiOperation(value = "자동완성 키워드 조회 API")
+  @GetMapping("/autocomplete")
+  public HttpResponseMessage readAutoCompleteKeyword(@RequestParam("keyword") String keyword) {
+    return HttpResponseMessage.from(restaurantAppService.readAutoCompleteKeyword(keyword));
+  }
+
+
 }

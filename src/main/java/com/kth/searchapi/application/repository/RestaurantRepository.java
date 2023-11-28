@@ -11,4 +11,6 @@ public interface RestaurantRepository {
   List<RestaurantEsEntity> findByNameOrDescriptionPrefix(String keyword);
 
   void saveAll(List<Restaurant> restaurants);
+
+  List<String> findAreasByAggregatingKeyword(String keyword);
 }

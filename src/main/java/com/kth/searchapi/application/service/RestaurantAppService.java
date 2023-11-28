@@ -2,7 +2,9 @@ package com.kth.searchapi.application.service;
 
 import com.kth.searchapi.application.repository.RestaurantRepository;
 import com.kth.searchapi.web.rqrs.RestaurantAutoCompleteKeywordReadRs;
+import com.kth.searchapi.web.rqrs.RestaurantRelativeAreasReadRs;
 import com.kth.searchapi.web.rqrs.RestaurantsSearchRs;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import lombok.RequiredArgsConstructor;
@@ -27,5 +29,9 @@ public class RestaurantAppService {
                             .flatMap(restaurant -> Stream.of(restaurant.getName(),
                                                              restaurant.getDescription()))
                             .collect(Collectors.toList()));
+  }
+
+  public RestaurantRelativeAreasReadRs readRelativeAreas(String keyword) {
+    return RestaurantRelativeAreasReadRs.from(restaurantRepository.findAreasByAggregatingKeyword(keyword));
   }
 }

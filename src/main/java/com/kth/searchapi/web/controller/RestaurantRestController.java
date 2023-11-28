@@ -28,5 +28,10 @@ public class RestaurantRestController {
     return HttpResponseMessage.from(restaurantAppService.readAutoCompleteKeyword(keyword));
   }
 
+  @ApiOperation(value = "연관 검색어(지역) 조회 API")
+  @GetMapping("/relative-areas")
+  public HttpResponseMessage readRelativeAreas(@RequestParam("keyword") String keyword) {
+    return HttpResponseMessage.from(restaurantAppService.readRelativeAreas(keyword));
+  }
 
 }
